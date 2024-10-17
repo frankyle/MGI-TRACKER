@@ -1,29 +1,26 @@
-# Traders Ideas can be saved in Django database
+# Welcome page
 ![alt text](image.png)
 
-# My MGI Strategy can also be saved in database
+# About Us
 ![alt text](image-1.png)
 
-# A beautiful Hero For a website
+# Service page
 ![alt text](image-2.png)
 
-# Contact component
+# Blog before login
 ![alt text](image-3.png)
 
-# Service component
+# Blog after login
 ![alt text](image-4.png)
 
-# Footer component
+# Packages
 ![alt text](image-5.png)
 
-# Membership components
+# Contact Page
 ![alt text](image-6.png)
 
-# Tutorial components
+# Register page
 ![alt text](image-7.png)
 
-# Paid page for signals
+# Login page
 ![alt text](image-8.png)
-
-# Added Daily Candles tracking 
-![alt text](image-9.png)

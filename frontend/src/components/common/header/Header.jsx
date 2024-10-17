@@ -178,13 +178,13 @@ const Header = () => {
                 Hello, {user.username}
               </Typography>
               <Button
-                color="inherit"
+                color="error"
                 onClick={handleLogout}
                 sx={{
                   borderRadius: '20px', // Rounded button
                   padding: '6px 16px', // Add padding
                   '&:hover': {
-                    color: '#d32f2f',
+                    color: '#ecda36',
                     transition: 'color 0.3s ease-in-out',
                   }
                 }}
