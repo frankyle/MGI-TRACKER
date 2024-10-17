@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { jwtDecode } from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode'; // Corrected to named import
 
 const baseURL = "http://127.0.0.1:8000/api";
 
 // Function to check if the token is expired
 const isTokenExpired = (token) => {
-  const decoded = jwtDecode(token);
+  const decoded = jwtDecode(token);  // Corrected usage
   const currentTime = Date.now() / 1000;
   return decoded.exp < currentTime;
 };
@@ -14,7 +14,7 @@ const isTokenExpired = (token) => {
 // Initial state
 const initialState = {
   user: localStorage.getItem('authTokens') && !isTokenExpired(JSON.parse(localStorage.getItem('authTokens')).access)
-    ? jwtDecode(JSON.parse(localStorage.getItem('authTokens')).access)
+    ? jwtDecode(JSON.parse(localStorage.getItem('authTokens')).access)  // Corrected usage
     : null,
   authTokens: localStorage.getItem('authTokens') && !isTokenExpired(JSON.parse(localStorage.getItem('authTokens')).access)
     ? JSON.parse(localStorage.getItem('authTokens'))
@@ -84,7 +84,7 @@ const authSlice = createSlice({
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
         state.authTokens = action.payload;
-        state.user = jwtDecode(action.payload.access);  // Decode access token to get user info
+        state.user = jwtDecode(action.payload.access);  // Corrected usage
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
@@ -103,7 +103,7 @@ const authSlice = createSlice({
       })
       .addCase(refreshToken.fulfilled, (state, action) => {
         state.authTokens = action.payload;
-        state.user = jwtDecode(action.payload.access);  // Decode refreshed token
+        state.user = jwtDecode(action.payload.access);  // Corrected usage
       })
       .addCase(refreshToken.rejected, (state, action) => {
         state.error = action.payload;
